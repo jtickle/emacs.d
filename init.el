@@ -57,6 +57,7 @@
 (setq auto-mode-alist
       '(("\\.el$" . lisp-mode)
         ("\\.js$" . js2-mode)
+        ("\\.jsx$" . web-mode)
         ("\\.coffee$" . coffee-mode)
         ("\\.html$" . sgml-mode)
         ("\\.py$" . python-mode)
@@ -72,9 +73,14 @@
 
 ; Tab settings
 (setq-default indent-tabs-mode nil)     ;; don't put tab characters in my files
-(setq-default tab-width 4)              ;; tabs inserted by others are shown as 4 spaces long
-(setq-default c-basic-offset 4)         ;; 4 spaces to indent in c based languages
+(setq-default tab-width 2)              ;; tabs inserted by others are shown as 4 spaces long
+(setq-default c-basic-offset 2)         ;; 2 spaces to indent in c based languages
 (setq indent-line-function 'insert-tab) ;; insert tab... oops spaces (awful... just awful)
+
+; Tab settings for web-mode
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
 
 ; Disable all vc-* modes.  They are awful.
 (setq vc-handled-backends nil)
